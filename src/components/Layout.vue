@@ -3,11 +3,11 @@
     <el-container style="height:100%; border: 1px solid #eee">
         
         <el-aside width="18%" style="background-color: rgb(238, 241, 246); position:fixed; top:0px; ">
-            <el-menu :default-openeds="['1','2','3']" background-color="#0d1b35" text-color="#fff" active-text-color="#fff">
+            <el-menu router :default-openeds="['1','2','3']" background-color="#0d1b35" text-color="#fff" active-text-color="#fff">
                 
                 <el-submenu index="1">
                     <template slot="title"><i class="el-icon-upload"></i>云主机服务</template>
-                    <el-menu-item index="1-1">实例</el-menu-item>
+                    <el-menu-item index="/ecs/instance">实例</el-menu-item>
                     <el-menu-item index="1-2">云硬盘</el-menu-item>
                     <el-menu-item index="1-2">云硬盘快照</el-menu-item>
                     <el-menu-item index="1-2">镜像</el-menu-item>
@@ -78,26 +78,28 @@
                 </el-dropdown>
             
             </el-header>
+
+            <router-view/>
             
-            <div style="position:fixed; z-index:1;margin-left:10px; margin-top:60px; width: 82%">
+            <!-- <div style="position:fixed; z-index:1;margin-left:10px; margin-top:60px; width: 82%">
                 <el-button type="success" icon="el-icon-refresh"></el-button>
                 <el-button style="margin-left:83%" type="primary" icon="el-icon-plus" @click="dialogFormVisible = true">创 建</el-button>
             </div>
 
-<el-dialog title="创建云主机" :visible.sync="dialogFormVisible">
-  <el-form :model="form">
-    <el-form-item label="选择镜像" :label-width="formLabelWidth">
-      <el-select v-model="form.region" placeholder="请选择活动区域">
-        <el-option label="区域一" value="shanghai"></el-option>
-        <el-option label="区域二" value="beijing"></el-option>
-      </el-select>
-    </el-form-item>
-  </el-form>
-  <div slot="footer" class="dialog-footer">
-    <el-button @click="dialogFormVisible = false">取 消</el-button>
-    <el-button type="primary" @click="dialogFormVisible = false">确 定</el-button>
-  </div>
-</el-dialog>
+            <el-dialog title="创建云主机" :visible.sync="dialogFormVisible">
+                <el-form :model="form">
+                    <el-form-item label="选择镜像" :label-width="formLabelWidth">
+                    <el-select v-model="form.region" placeholder="请选择活动区域">
+                        <el-option label="区域一" value="shanghai"></el-option>
+                        <el-option label="区域二" value="beijing"></el-option>
+                    </el-select>
+                    </el-form-item>
+                </el-form>
+                <div slot="footer" class="dialog-footer">
+                    <el-button @click="dialogFormVisible = false">取 消</el-button>
+                    <el-button type="primary" @click="dialogFormVisible = false">确 定</el-button>
+                </div>
+            </el-dialog>
 
             <el-main style="padding-top:120px">
 
@@ -135,7 +137,7 @@
                     </el-table-column>
                 </el-table>
 
-            </el-main>
+            </el-main> -->
 
         </el-container>
 
